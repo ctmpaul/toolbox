@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movinet Conversion{% endblock %}
+
+{% block body %}
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://papadikembe.com/assets/img/emojious-codrops/pluger.svg" alt="" width="72" height="57">
+      <h2>Conversion Movinet</h2>
+      <p class="lead">Ouf</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Fabline vers :</h4>
+        {{ form(form) }}
+        {% if result and result.submitted and result.response %}
+        <hr class="my-4">
+        Fablines<br>
+        <code>
+            {{ result.submitted }}
+        </code><br><br>
+        JSON ou KVAR<br>
+        <code>
+            {{ result.response }}
+        </code>
+        {% endif %}
+      </div>
+    </div>
+{% endblock %}
